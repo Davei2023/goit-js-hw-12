@@ -1,9 +1,3 @@
-/**
-  |============================
-  | include css partials with
-  | default @import url()
-  |============================
-*/
 @import url('./reset.css');
 
 :root {
@@ -11,16 +5,15 @@
   font-size: 16px;
   line-height: 24px;
   font-weight: 400;
-
   color: #242424;
   background-color: rgba(255, 255, 255, 0.87);
-
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 }
+
 .search-form {
   display: flex;
   gap: 10px;
@@ -39,18 +32,9 @@
   background-color: transparent;
 }
 
-.search-inp::placeholder {
-  color: #000000;
-  background-color: transparent;
-}
-
-.search-inp:hover {
-  border: 1px solid #000;
-}
-
-.search-inp:focus {
-  border: 1px solid #4e75ff;
-}
+.search-inp::placeholder { color: #000; background-color: transparent; }
+.search-inp:hover { border: 1px solid #000; }
+.search-inp:focus { border: 1px solid #4e75ff; }
 
 .search-btn {
   color: #fff;
@@ -64,11 +48,7 @@
   border: none;
   padding: 0;
 }
-
-.search-btn:hover,
-.search-btn:focus {
-  background-color: #6c8cff;
-}
+.search-btn:hover, .search-btn:focus { background-color: #6c8cff; }
 
 .gallery {
   display: flex;
@@ -77,25 +57,23 @@
   border-radius: 15px;
   width: 100%;
   justify-content: center;
-  /* max-width: 1130px; */
   padding: 0 5px;
-  background-color: #ffffff;
+  background-color: #fff;
   margin: 0 auto;
   box-shadow: 10px 1px 10px rgba(74, 41, 41, 0.366);
 }
 
 .gallery-item {
+  /* фикс: убран пробел в calc((100% - 48px) / 3) */
   flex-basis: calc((100% - 48px) / 3);
   transition: transform 250ms ease-in-out;
   background-color: #fafafa;
   box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08),
-    0px 1px 1px rgba(46, 47, 66, 0.16), 0px 1px 6px rgba(46, 47, 66, 0.08);
+              0px 1px 1px rgba(46, 47, 66, 0.16),
+              0px 1px 6px rgba(46, 47, 66, 0.08);
 }
 
-.gallery-item:hover,
-.gallery-item:focus {
-  transform: scale(1.1);
-}
+.gallery-item:hover, .gallery-item:focus { transform: scale(1.05); }
 
 .gallery-item:hover .gallery-descr {
   background-image: linear-gradient(320deg, #c50f73 0%, #7afb66 100%);
@@ -104,6 +82,8 @@
 .gallery-image {
   width: 360px;
   height: 200px;
+  object-fit: cover;
+  display: block;
 }
 
 .gallery-descr {
@@ -112,27 +92,20 @@
   width: 360px;
   text-align: center;
   height: 45px;
+  display: grid;
+  place-items: center;
   background-image: linear-gradient(320deg, #b7131e 0%, #12109b 100%);
-}
-
-.descr-span {
-  font-weight: 500;
-}
-
-.error-svg {
-  background-image: url(../img/error.svg);
-}
-
-.descr-span {
-  font-weight: bold;
-  color: #ffffff;
-  text-decoration: underline;
-}
-
-.gallery-descr {
   font-weight: bold;
   color: #fff;
 }
+
+.descr-span {
+  font-weight: bold;
+  color: #fff;
+  text-decoration: underline;
+}
+
+.error-svg { background-image: url(../img/error.svg); }
 
 .load-btn {
   color: #fff;
@@ -144,37 +117,22 @@
   border-radius: 10px;
   background-color: #4714e1;
   border: none;
-  padding: 0 auto;
   margin: 0 auto;
-  justify-content: center;
   display: flex;
-  text-align: center;
-  flex-wrap: wrap;
-  align-content: center;
+  justify-content: center;
+  align-items: center;
 }
+.load-btn:hover, .load-btn:focus { background-color: #170551d8; }
+.load-btn.is-hidden { display: none; }
 
-.load-btn:hover,
-.load-btn:focus {
-  background-color: #170551d8;
-}
+.button { margin: 0 auto; padding: 20px 0; }
 
-.load-btn.is-hidden {
-  display: none;
-}
-
-.button {
-  margin: 0 auto;
-  padding: 20px 0px;
-}
-
-/* Loader */
-
+/* Loader — компактный, не перекрывает весь экран */
 .loader-container{
   display:none;
   justify-content:center;
   align-items:center;
   padding:16px 0;
-  height:auto;
 }
 
 .loader {
@@ -189,7 +147,7 @@
 }
 .loader::after,
 .loader::before {
-  content: '';  
+  content: '';
   box-sizing: border-box;
   position: absolute;
   left: 0;
@@ -209,10 +167,6 @@
 }
 
 @keyframes rotation {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
