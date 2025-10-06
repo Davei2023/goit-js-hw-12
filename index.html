@@ -5,32 +5,34 @@
     <link rel="icon" type="image/svg+xml" href="/vanilla-app-template/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>goit-js-hw-12</title>
-    <script type="module" crossorigin src="/vanilla-app-template/index.js"></script>
-    <link rel="modulepreload" crossorigin href="/vanilla-app-template/assets/vendor-BSTwZ_tR.js">
-    <link rel="stylesheet" crossorigin href="/vanilla-app-template/assets/vendor-DumFYO8Z.css">
-    <link rel="stylesheet" crossorigin href="/vanilla-app-template/assets/index-BdZ_CHLE.css">
+    <script type="module" crossorigin src="/vanilla-app-template/assets/index-CGSinYLx.js"></script>
+    <link rel="modulepreload" crossorigin href="/vanilla-app-template/assets/vendor-EmsQAAmi.js">
+    <link rel="stylesheet" crossorigin href="/vanilla-app-template/assets/vendor-CWKLx11g.css">
+    <link rel="stylesheet" crossorigin href="/vanilla-app-template/assets/index--5GYMGCX.css">
   </head>
   <body>
-    <form class="form search-form" autocomplete="on">
-      <label>
-        <input
-          class="search-inp"
-          type="text"
-          name="search-text"
-          placeholder="Search images..."
-          required
-        />
-      </label>
-      <button class="search-btn" type="submit">Search</button>
-    </form>
+    <section>
+      <form class="search-form" autocomplete="on">
+        <label>
+          <input
+            class="search-inp"
+            type="text"
+            name="query"
+            placeholder="Search images..."
+            required
+            maxlength="100"
+          />
+        </label>
+        <button class="search-btn" type="submit">Search</button>
+      </form>
 
-    <ul class="gallery"></ul>
+      <ul class="gallery"></ul>
 
-    <div class="button">
-      <button class="load-btn is-hidden">Load more</button>
-    </div>
+      <div class="button">
+        <button class="load-btn is-hidden" type="button">Load more</button>
+      </div>
+    </section>
 
-    <!-- лоадер ПІД кнопкою -->
     <div class="loader-container" style="display:none">
       <span class="loader"></span>
     </div>
