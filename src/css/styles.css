@@ -22,7 +22,7 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 }
-.search-form {
+.form {
   display: flex;
   gap: 10px;
   justify-content: center;
